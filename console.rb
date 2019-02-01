@@ -8,6 +8,10 @@ customer_2 = Customer.new({"name" => "Helena Prentice", "funds" => 5})
 customer_3 = Customer.new({"name" => "Lexi Odling", "funds" => 10})
 customer_4 = Customer.new({"name" => "Hilda Alston", "funds" => 15})
 
+customer_1.save()
+customer_2.save()
+customer_3.save()
+customer_4.save()
 
 film_1 = Film.new({"title" => "Matrix", "price" => 3.50})
 film_2 = Film.new({"title" => "Avengers: Endgame - 3D", "price" => 11.00})
