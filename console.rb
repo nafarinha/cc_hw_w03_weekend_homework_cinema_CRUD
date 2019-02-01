@@ -18,6 +18,11 @@ film_2 = Film.new({"title" => "Avengers: Endgame - 3D", "price" => 11.00})
 film_3 = Film.new({"title" => "Captain Marvel", "price" => 9.50})
 film_4 = Film.new({"title" => "Interstellar", "price" => 5.00})
 
+film_1.save()
+film_2.save()
+film_3.save()
+film_4.save()
+
 ticket_1 = Ticket.new({ "customer_id" => customer_1.id, "film_id" => film_1.id })
 ticket_2 = Ticket.new({ "customer_id" => customer_2.id, "film_id" => film_1.id })
 ticket_3 = Ticket.new({ "customer_id" => customer_1.id, "film_id" => film_2.id })
