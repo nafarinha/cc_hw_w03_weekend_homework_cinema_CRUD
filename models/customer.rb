@@ -27,8 +27,8 @@ class Customer
       WHERE c.id = $1"
     values = [@id]
     tickets = SqlRunner.run(sql, values)
-    num_tickets = tickets.map { |ticket| Ticket.new(ticket) }
-    return num_tickets.size()
+    total_tickets = tickets.map { |ticket| Ticket.new(ticket) }
+    return total_tickets.size()
   end
 
 #END_EXTENSIONS
