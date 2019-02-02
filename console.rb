@@ -60,6 +60,7 @@ Film.all()
 Ticket.all()
 
 customer_1.films()
+film_1.customers()
 
 binding.pry
 nil

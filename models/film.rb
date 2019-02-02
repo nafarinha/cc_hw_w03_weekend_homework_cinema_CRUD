@@ -10,6 +10,19 @@ class Film
     @price = options['price']
   end
 
+  def customers()
+    sql = "SELECT * FROM films f
+      INNER JOIN tickets t
+        ON t.film_id = f.id
+      INNER JOIN customers c
+        ON c.id = t.customer_id
+      WHERE f.id = $1"
+    values = [@id]
+    customers = SqlRunner.run(sql, values)
+    result = customers.map { |customer| Customer.new(customer) }
+    return result
+  end
+
   def save()
   sql = "INSERT INTO films
     (title, price)
