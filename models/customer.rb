@@ -10,6 +10,20 @@ class Customer
     @funds = options["funds"]
   end
 
+#EXTENSIONS
+  def buy_ticket(film)
+    price = film.price()
+    return if price >= @funds
+    @funds -= price
+    self.update()
+    new_ticket = Ticket.new({"customer_id" => @id, "film_id" => film.id})
+    new_ticket.save()
+  end
+
+
+#END_EXTENSIONS
+
+
   def films()
     sql = "SELECT f.* FROM customers c
       INNER JOIN tickets t
