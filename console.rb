@@ -3,6 +3,10 @@ require_relative("./models/customer")
 require_relative("./models/film")
 require_relative("./models/ticket")
 
+Ticket.delete_all()
+Film.delete_all()
+Customer.delete_all()
+
 customer_1 = Customer.new({"name" => "Kashif Mcfarlane", "funds" => 20})
 customer_2 = Customer.new({"name" => "Helena Prentice", "funds" => 5})
 customer_3 = Customer.new({"name" => "Lexi Odling", "funds" => 10})
