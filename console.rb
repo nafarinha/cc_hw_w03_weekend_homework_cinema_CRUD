@@ -33,6 +33,11 @@ ticket_2.save()
 ticket_3.save()
 ticket_4.save()
 
+customer_1.funds = 25
+customer_2.name = "Helen Prentice"
+customer_1.update()
+customer_2.update()
+
 Customer.all()
 Film.all()
 Ticket.all()

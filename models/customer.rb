@@ -20,6 +20,13 @@ class Customer
   @id = customer['id'].to_i
 end
 
+  def update()
+    sql = "UPDATE customers
+      SET name = $1, funds = $2
+      WHERE id = $3"
+    values = [@name, @funds, @id]
+    SqlRunner.run(sql, values)
+  end
 
 #Class methods
 def self.all()
