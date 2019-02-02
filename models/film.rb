@@ -10,6 +10,12 @@ class Film
     @price = options['price']
   end
 
+#EXTENSIONS
+  def total_customers()
+    self.customers.size()
+  end
+
+#END EXTENSIONS
 
 
   def customers()
