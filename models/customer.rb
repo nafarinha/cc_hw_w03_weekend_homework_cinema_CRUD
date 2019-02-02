@@ -21,5 +21,14 @@ class Customer
 end
 
 
+#Class methods
+def self.all()
+  sql = "SELECT * FROM customers"
+  customers = SqlRunner.run(sql)
+  result = customers.map{ |customer| Customer.new(customer) }
+  return result
+end
+
+
 #end of class
 end

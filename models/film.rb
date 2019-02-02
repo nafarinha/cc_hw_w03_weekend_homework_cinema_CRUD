@@ -19,5 +19,15 @@ class Film
   film = SqlRunner.run(sql, values).first
   @id = film['id'].to_i
 end
+
+
+#Class methods
+
+def self.all()
+  sql = "SELECT * FROM films"
+  films = SqlRunner.run(sql)
+  result = films.map{ |film| Film.new(film) }
+  return result
+end
 #end of class
 end

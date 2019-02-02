@@ -33,5 +33,9 @@ ticket_2.save()
 ticket_3.save()
 ticket_4.save()
 
+Customer.all()
+Film.all()
+Ticket.all()
+
 binding.pry
 nil
