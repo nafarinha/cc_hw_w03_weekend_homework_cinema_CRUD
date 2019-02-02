@@ -10,12 +10,14 @@ class Film
     @price = options['price']
   end
 
+
+
   def customers()
-    sql = "SELECT * FROM films f
+    sql = "SELECT c.* FROM customers c
       INNER JOIN tickets t
-        ON t.film_id = f.id
-      INNER JOIN customers c
-        ON c.id = t.customer_id
+        ON t.customer_id = c.id
+      INNER JOIN films f
+        ON f.id = t.film_id
       WHERE f.id = $1"
     values = [@id]
     customers = SqlRunner.run(sql, values)
