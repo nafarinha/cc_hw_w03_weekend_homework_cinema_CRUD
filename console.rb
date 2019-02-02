@@ -27,16 +27,27 @@ ticket_1 = Ticket.new({ "customer_id" => customer_1.id, "film_id" => film_1.id }
 ticket_2 = Ticket.new({ "customer_id" => customer_2.id, "film_id" => film_1.id })
 ticket_3 = Ticket.new({ "customer_id" => customer_1.id, "film_id" => film_2.id })
 ticket_4 = Ticket.new({ "customer_id" => customer_3.id, "film_id" => film_3.id })
+ticket_5 = Ticket.new({ "customer_id" => customer_3.id, "film_id" => film_3.id })
 
 ticket_1.save()
 ticket_2.save()
 ticket_3.save()
 ticket_4.save()
+ticket_5.save()
 
 customer_1.funds = 25
 customer_2.name = "Helen Prentice"
 customer_1.update()
 customer_2.update()
+
+film_1.price = 3.00
+film_4.title = "Interstellar - Director's Cut"
+film_1.update()
+film_4.update()
+
+ticket_5.customer_id = customer_4.id
+ticket_5.film_id = film_4.id
+ticket_5.update()
 
 Customer.all()
 Film.all()
