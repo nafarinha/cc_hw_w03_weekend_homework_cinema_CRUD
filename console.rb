@@ -65,7 +65,7 @@ ticket_5.save()
 
 binding.pry
 customer_1.total_tickets()
-
+customer_2.buy_ticket(film_1)
 
 binding.pry
 nil

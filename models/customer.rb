@@ -20,6 +20,16 @@ class Customer
     new_ticket.save()
   end
 
+  def total_tickets()
+    sql = "SELECT t.* FROM tickets t
+      INNER JOIN customers c
+        ON c.id = t.customer_id
+      WHERE c.id = $1"
+    values = [@id]
+    tickets = SqlRunner.run(sql, values)
+    num_tickets = tickets.map { |ticket| Ticket.new(ticket) }
+    return num_tickets.size()
+  end
 
 #END_EXTENSIONS
 
