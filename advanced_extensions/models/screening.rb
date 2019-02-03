@@ -2,36 +2,28 @@ require_relative("../db/sql_runner")
 
 class Screening
   attr_reader :id
-  attr_accessor :showtime, :film_id
+  attr_accessor :showtime
 
   def initialize( options )
     @id = options['id'] if options['id']
     @showtime = options['showtime']
-    @film_id = options['film_id']
   end
-
-=begin
-- ONE screening can have MANY tickets
-- Two different screenings can share the same showtime value
-- A screening can only have ONE film
-- Added film_id because a screening may not sell any tickets, but still needs a reference to the film
-=end
 
   def save()
     sql = "INSERT INTO screenings
-      (showtime, film_id)
-      VALUES ($1, $2)
+      (showtime)
+      VALUES ($1)
       RETURNING id"
-    values = [@showtime, @film_id]
+    values = [@showtime]
     screening = SqlRunner.run(sql, values).first
     @id = screening['id'].to_i
   end
 
   def update()
     sql = "UPDATE screenings
-      SET showtime = $1, film_id = $2
-      WHERE id = $3"
-    values = [@showtime, @film_id, @id]
+      SET showtime = $1
+      WHERE id = $2"
+    values = [@showtime, @id]
     SqlRunner.run(sql, values)
   end
 
