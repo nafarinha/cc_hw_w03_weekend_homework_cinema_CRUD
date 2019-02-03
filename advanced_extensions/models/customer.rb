@@ -11,12 +11,12 @@ class Customer
   end
 
 #EXTENSIONS
-  def buy_ticket(film)
+  def buy_ticket(film, screening)
     price = film.price()
     return if price >= @funds
     @funds -= price
     self.update()
-    new_ticket = Ticket.new({"customer_id" => @id, "film_id" => film.id})
+    new_ticket = Ticket.new({"customer_id" => @id, "film_id" => film.id, "screening_id" => screening.id})
     new_ticket.save()
   end
 
