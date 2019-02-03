@@ -42,6 +42,8 @@ ticket_3.save()
 ticket_4.save()
 ticket_5.save()
 
+
+
 # customer_1.funds = 25
 # customer_2.name = "Helen Prentice"
 # customer_1.update()
@@ -63,9 +65,11 @@ ticket_5.save()
 # customer_1.films()
 # film_1.customers()
 
-binding.pry
+
 customer_1.total_tickets()
-customer_2.buy_ticket(film_1)
+customer_4.buy_ticket(film_1)
+
+film_1.total_customers()
 
 binding.pry
 nil
