@@ -101,8 +101,8 @@ customer_1.total_tickets()
 customer_4.buy_ticket(film_1, screening_1)
 
 film_1.total_customers()
-binding.pry
+
 film_1.most_popular_showtime()
 
-
+binding.pry
 nil
